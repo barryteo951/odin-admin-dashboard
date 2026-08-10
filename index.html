@@ -19,8 +19,9 @@
         }
 
         body {
-            display: flex;
+            margin: 0px;
             height: 100vh;
+            display: flex;
             font-family: sans-serif;
         }
 
@@ -46,16 +47,47 @@
             flex-direction: column;
         }
 
-        .header {
+        .header-main {
             flex: 2;
+            display: flex;
+            flex-direction: column;
             background-color: white;
         }
 
-        .body {
+        .header-top {
+            flex: 2;
+            border: 1px solid black;
+        }
+
+        .header-bot {
+            flex: 3;
+        }
+
+        .body-main {
             flex: 9;
+            display: flex;
             background-color: whitesmoke;
         }
 
+        .body-left {
+            flex: 2;
+            border: 1px solid black;
+        }
+
+        .body-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .body-announcement {
+            flex: 1;
+            border: 1px solid black;
+        }
+
+        .body-trending {
+            flex: 1;
+        }
 
     </style>
 
@@ -94,15 +126,23 @@
             <div>Support</div>
             <img src="./images/privacy.svg">
             <div>Privacy</div>
-
         </div>
     </div>
 
 
     <div class="dashboard-section">
-        <div class="header"></div> 
+        <div class="header-main">
+            <div class="header-top"></div>
+            <div class="header-bot"></div>
+        </div>
 
-        <div class="body"></div>
+        <div class="body-main">
+            <div class="body-left"></div>
+            <div class="body-right">
+                <div class="body-announcement"></div>
+                <div class="body-trending"></div>
+            </div> 
+        </div>
     </div>
 
 </body>
