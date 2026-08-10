@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     
-    
+
     <style>
+
+        :root {
+            --blue: #2092d2;
+        }
 
         * {
             box-sizing: border-box;
@@ -17,11 +21,23 @@
         body {
             display: flex;
             height: 100vh;
+            font-family: sans-serif;
         }
 
         .navigation-section {
             flex: 3;
-            background-color: lightskyblue;
+            background-color: var(--blue);
+            font-size: 20px;
+            font-weight: bold;
+            padding-left: 30px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 50px 50px;
+            grid-template-rows: 50px 50px;
+            grid-auto-rows: 50px;
+            color: white;
         }
 
         .dashboard-section {
@@ -40,6 +56,7 @@
             background-color: whitesmoke;
         }
 
+
     </style>
 
 </head>
@@ -47,7 +64,40 @@
 
 <body>
 
-    <div class="navigation-section"></div>
+    <div class="navigation-section">
+        <div class="grid-container">
+            <img src="./images/dashboard.svg">
+            <div>Dashboard</div>
+
+            <img>
+            <div></div>
+
+            <img src="./images/home.svg">
+            <div>Home</div>
+            <img src="./images/profile.svg">
+            <div>Profile</div>
+            <img src="./images/messages.svg">
+            <div>Messages</div>
+            <img src="./images/history.svg">
+            <div>History</div> 
+            <img src="./images/tasks.svg">
+            <div>Tasks</div>
+            <img src="./images/communities.svg">
+            <div>Communities</div>
+            
+            <img>
+            <div></div>
+            
+            <img src="./images/settings.svg">
+            <div>Settings</div>
+            <img src="./images/support.svg">
+            <div>Support</div>
+            <img src="./images/privacy.svg">
+            <div>Privacy</div>
+
+        </div>
+    </div>
+
 
     <div class="dashboard-section">
         <div class="header"></div> 
