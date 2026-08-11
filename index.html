@@ -22,7 +22,8 @@
 
         body {
             margin: 0px;
-            height: 100vh;
+            min-height: 100vh;
+            /* width: 100%; */
             display: flex;
             font-family: sans-serif;
         }
@@ -30,7 +31,7 @@
         .nav-section {
             flex: 2;
             background-color: var(--blue);
-            font-size: 20px;
+            font-size: 25px;
             font-weight: bold;
             padding-left: 30px;
         }
@@ -40,7 +41,10 @@
             grid-template-columns: 50px 50px;
             grid-template-rows: 50px 50px;
             grid-auto-rows: 50px;
+            column-gap: 20px;
+            row-gap: 5px;
             color: white;
+            padding-top: 20px;
         }
 
         .dashboard-section {
@@ -49,15 +53,31 @@
             flex-direction: column;
         }
 
+        .nav-grid-container img {
+            justify-self: center;
+            align-self: center;
+        }
+
+        .nav-grid-container div {
+            align-self: center;
+        }
+
+        .nav-grid-container > :nth-child(2) {
+            font-size: 30px;
+        }
+
+        /*            */
+        /* HEADER TOP */
+        /*            */
         .header-main {
-            flex: 2;
+            flex: 1;
             display: flex;
             flex-direction: column;
             background-color: white;
         }
 
         .header-top {
-            flex: 2;
+            flex: 1;
             display: flex;
             align-items: center;
         }
@@ -65,7 +85,7 @@
         .header-top-left {
             flex: 3;
             display: flex;
-            gap: 30px;
+            gap: 15px;
             padding-left: 50px;
         }
 
@@ -81,8 +101,8 @@
             flex: 2;
             display: flex;
             align-items: center;
-            gap: 30px;
-            padding-left: 150px;
+            gap: 35px;
+            padding-left: 130px;
         }
 
         .header-top-left :first-child, 
@@ -92,8 +112,8 @@
         }
 
         .header-top-right :nth-child(2) {
-            width: 45px;
-            height: 45px;
+            width: 55px;
+            height: 55px;
             border-radius: 50px;
         }
 
@@ -102,13 +122,16 @@
             font-weight: bold;
         }
 
+        /*            */
+        /* HEADER BOT */
+        /*            */
         .header-bot {
-            flex: 3;
+            flex: 1.3;
             display: flex;
         }
 
         .header-bot-left { 
-            flex: 2;
+            flex: 1.5;
             display: flex;
             align-items: center;
             gap: 20px;
@@ -116,8 +139,8 @@
         }
 
         .header-bot-left > img {
-            width: 70px; 
-            height: 70px; 
+            width: 85px; 
+            height: 85px; 
             border-radius: 50px;
         }
 
@@ -145,17 +168,21 @@
         }
 
         .header-bot-right > button {
-            width: 100px;
-            height: 40px;
+            width: 115px;
+            height: 45px;
             border-radius: 30px;
             border: none;
             background-color: var(--blue);
             color: white;
             font-size: 16px;
+            font-weight: bold;
         }
 
+        /*                      */
+        /* BODY LEFT (PROJECTS) */
+        /*                      */
         .body-main {
-            flex: 9;
+            flex: 3.6;
             display: flex;
             background-color: var(--gray);
         }
@@ -189,6 +216,9 @@
             box-shadow: inset 10px 0px var(--orange);
         }
 
+        /*                           */
+        /* BODY RIGHT (ANN & TRENDS) */
+        /*                           */
         .body-right {
             flex: 1;
             display: flex;
@@ -272,14 +302,14 @@
 
                 <div class="header-top-right">
                     <img src="./images/notifications.svg">
-                    <img src="./images/hornet.jpg">
+                    <img src="./images/profile-pic-2.png">
                     <div>Barry Teo</div>
                 </div>
             </div>
 
             <div class="header-bot">
                 <div class="header-bot-left">
-                    <img src="./images/hornet.jpg">
+                    <img src="./images/profile-pic-2.png">
                     <div>
                         <div>Hi there, </div>
                         <div>Barry Teo (@barryteo)</div>
