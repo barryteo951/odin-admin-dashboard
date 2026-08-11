@@ -12,6 +12,8 @@
 
         :root {
             --blue: #2092d2;
+            --gray: #e2e8f0;
+            --orange: #efb436;
         }
 
         * {
@@ -25,15 +27,15 @@
             font-family: sans-serif;
         }
 
-        .navigation-section {
-            flex: 3;
+        .nav-section {
+            flex: 2;
             background-color: var(--blue);
             font-size: 20px;
             font-weight: bold;
             padding-left: 30px;
         }
 
-        .grid-container {
+        .nav-grid-container {
             display: grid;
             grid-template-columns: 50px 50px;
             grid-template-rows: 50px 50px;
@@ -57,16 +59,47 @@
         .header-top {
             flex: 2;
             display: flex;
-            border: 1px solid black;
+            align-items: center;
         }
 
         .header-top-left {
             flex: 3;
-            border: 1px solid black;
+            display: flex;
+            gap: 30px;
+            padding-left: 50px;
+        }
+
+        .header-top-left > input {
+            width: 700px; 
+            height: 35px;
+            border: none;
+            background-color: var(--gray);            
+            border-radius: 30px;
         }
 
         .header-top-right {
             flex: 2;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding-left: 150px;
+        }
+
+        .header-top-left :first-child, 
+        .header-top-right :first-child {
+            width: 30px;
+            height: 30px
+        }
+
+        .header-top-right :nth-child(2) {
+            width: 45px;
+            height: 45px;
+            border-radius: 50px;
+        }
+
+        .header-top-right :last-child {
+            font-size: 20px;
+            font-weight: bold;
         }
 
         .header-bot {
@@ -75,23 +108,85 @@
         }
 
         .header-bot-left { 
-            flex: 1;
-            border: 1px solid black;
+            flex: 2;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-left: 50px;
+        }
+
+        .header-bot-left > img {
+            width: 70px; 
+            height: 70px; 
+            border-radius: 50px;
+        }
+
+        .header-bot-left > div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .header-bot-left > div > :first-child {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .header-bot-left > div > :last-child {
+            font-size: 25px;
+            font-weight: bold;
         }
 
         .header-bot-right {
             flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header-bot-right > button {
+            width: 100px;
+            height: 40px;
+            border-radius: 30px;
+            border: none;
+            background-color: var(--blue);
+            color: white;
+            font-size: 16px;
         }
 
         .body-main {
             flex: 9;
             display: flex;
-            background-color: whitesmoke;
+            background-color: var(--gray);
         }
 
         .body-left {
             flex: 2;
-            border: 1px solid black;
+            padding-left: 30px;
+        }
+
+        .body-left > p, 
+        .body-right-top > p, 
+        .body-right-bot > p 
+        {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .body-grid-container {
+            display: grid;
+            grid-template-columns: 350px 350px;
+            grid-template-rows: 200px 200px;
+            grid-auto-columns: 350px 350px;
+            grid-auto-rows: 200px 200px;
+            row-gap: 50px;
+            column-gap: 50px;
+        }
+
+        .body-grid-container div {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: inset 10px 0px var(--orange);
         }
 
         .body-right {
@@ -100,13 +195,30 @@
             flex-direction: column;
         }
 
-        .body-announcement {
+        .body-right-top {
             flex: 1;
-            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
         }
 
-        .body-trending {
+        .body-right-top > div {
+            width: 350px;
+            height: 300px;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .body-right-bot {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .body-right-bot > div {
+            width: 350px;
+            height: 300px; 
+            border-radius: 10px;
+            background-color: white;
         }
 
     </style>
@@ -116,8 +228,8 @@
 
 <body>
 
-    <div class="navigation-section">
-        <div class="grid-container">
+    <div class="nav-section">
+        <div class="nav-grid-container">
             <img src="./images/dashboard.svg">
             <div>Dashboard</div>
 
@@ -153,21 +265,58 @@
     <div class="dashboard-section">
         <div class="header-main">
             <div class="header-top">
-                <div class="header-top-left"></div>
-                <div class="header-top-right"></div>
+                <div class="header-top-left">
+                    <img src="./images/search.svg">
+                    <input type="text">
+                </div>
+
+                <div class="header-top-right">
+                    <img src="./images/notifications.svg">
+                    <img src="./images/hornet.jpg">
+                    <div>Barry Teo</div>
+                </div>
             </div>
 
             <div class="header-bot">
-                <div class="header-bot-left"></div>
-                <div class="header-bot-right"></div>
+                <div class="header-bot-left">
+                    <img src="./images/hornet.jpg">
+                    <div>
+                        <div>Hi there, </div>
+                        <div>Barry Teo (@barryteo)</div>
+                    </div>
+                </div>
+
+                <div class="header-bot-right">
+                    <button type="button">New</button>
+                    <button type="button">Upload</button>
+                    <button type="button">Share</button>
+                </div>
             </div>
         </div>
 
         <div class="body-main">
-            <div class="body-left"></div>
+            <div class="body-left">
+                <p>Your Projects</p>
+                <div class="body-grid-container">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+            </div>
             <div class="body-right">
-                <div class="body-announcement"></div>
-                <div class="body-trending"></div>
+                <div class="body-right-top">
+                    <p>Announcements</p>
+                    <div></div>
+                </div>
+                    
+                <div class="body-right-bot">
+                    <p>Trending</p>
+                    <div></div>
+                </div>
             </div> 
         </div>
     </div>
