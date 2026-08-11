@@ -56,11 +56,31 @@
 
         .header-top {
             flex: 2;
+            display: flex;
             border: 1px solid black;
+        }
+
+        .header-top-left {
+            flex: 3;
+            border: 1px solid black;
+        }
+
+        .header-top-right {
+            flex: 2;
         }
 
         .header-bot {
             flex: 3;
+            display: flex;
+        }
+
+        .header-bot-left { 
+            flex: 1;
+            border: 1px solid black;
+        }
+
+        .header-bot-right {
+            flex: 1;
         }
 
         .body-main {
@@ -132,8 +152,15 @@
 
     <div class="dashboard-section">
         <div class="header-main">
-            <div class="header-top"></div>
-            <div class="header-bot"></div>
+            <div class="header-top">
+                <div class="header-top-left"></div>
+                <div class="header-top-right"></div>
+            </div>
+
+            <div class="header-bot">
+                <div class="header-bot-left"></div>
+                <div class="header-bot-right"></div>
+            </div>
         </div>
 
         <div class="body-main">
