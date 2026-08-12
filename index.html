@@ -200,7 +200,7 @@
             font-weight: bold;
         }
 
-        .body-grid-container {
+        .project-grid-container {
             display: grid;
             grid-template-columns: 350px 350px;
             grid-template-rows: 200px 200px;
@@ -210,7 +210,7 @@
             column-gap: 50px;
         }
 
-        .body-grid-container div {
+        .project-grid-container div {
             background-color: white;
             border-radius: 15px;
             box-shadow: inset 10px 0px var(--orange);
@@ -229,14 +229,49 @@
             flex: 1;
             display: flex;
             flex-direction: column;
+            border: 3px solid red;
+
+            /* grid-template-columns: 250px;
+            grid-template-rows: 20px;
+            grid-auto-rows: 20px; */
         }
 
-        .body-right-top > div {
-            width: 350px;
-            height: 300px;
-            border-radius: 10px;
-            background-color: white;
+        .announcement-grid-container {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: 350px;
+            width: 350px;   
+            border-radius: 20px;
+            overflow: hidden;
+            /* padding: 10px; 
+            border: 2px solid blue;  */
         }
+        
+        .announcement {
+            background-color: white;
+            width: 100%;   
+            /* border: 1px solid orange; */
+            /* padding: 10px; */
+        } 
+
+        .announcement h3 {
+            font-weight: bold;
+        }
+
+        .announcement p {
+            width: 80%;
+        }
+
+        /* separator lines */
+        .announcement-grid-container > div:not(:last-child)::after {
+            content: "";
+            display: block;
+            width: 80%; 
+            height: 1px;
+            background-color: var(--gray);
+            margin: 10px;
+            /* margin: 20px auto 0; */
+        }        
 
         .body-right-bot {
             flex: 1;
@@ -244,11 +279,12 @@
             flex-direction: column;
         }
 
-        .body-right-bot > div {
-            width: 350px;
+        .body-right-bot :nth-child(2n) {
+
+            /* width: 350px;
             height: 300px; 
             border-radius: 10px;
-            background-color: white;
+            background-color: white; */
         }
 
     </style>
@@ -262,10 +298,8 @@
         <div class="nav-grid-container">
             <img src="./images/dashboard.svg">
             <div>Dashboard</div>
-
             <img>
             <div></div>
-
             <img src="./images/home.svg">
             <div>Home</div>
             <img src="./images/profile.svg">
@@ -278,10 +312,8 @@
             <div>Tasks</div>
             <img src="./images/communities.svg">
             <div>Communities</div>
-            
             <img>
             <div></div>
-            
             <img src="./images/settings.svg">
             <div>Settings</div>
             <img src="./images/support.svg">
@@ -327,7 +359,7 @@
         <div class="body-main">
             <div class="body-left">
                 <p>Your Projects</p>
-                <div class="body-grid-container">
+                <div class="project-grid-container">
                     <div></div>
                     <div></div>
                     <div></div>
@@ -340,9 +372,24 @@
             <div class="body-right">
                 <div class="body-right-top">
                     <p>Announcements</p>
-                    <div></div>
+                    <div class="announcement-grid-container">
+                        <div class="announcement">
+                            <h3>Site Maintenance</h3>
+                            <p>Scheduled maintenance will occur tonight from 11 PM to 1 AM.</p>
+                        </div>
+
+                        <div class="announcement">
+                            <h3>New Feature</h3>
+                            <p>A new dashboard feature is now available. Check it out!</p>
+                        </div>
+
+                        <div class="announcement">
+                            <h3>Important Update</h3>
+                            <p>Please review your account details and make sure they are up to date.</p>
+                        </div>
+                    </div>  
                 </div>
-                    
+
                 <div class="body-right-bot">
                     <p>Trending</p>
                     <div></div>
