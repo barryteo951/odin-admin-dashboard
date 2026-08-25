@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style> 
+
+        :root {
+            --blue: #2092d2;
+            --gray: #e2e8f0;
+            --orange: #efb436;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: grid;
+            grid-template-columns: 20% 1fr;
+            grid-template-rows: auto 1fr;
+            grid-template-areas: 
+            "nav  header"
+            "nav  body";
+        }
+
+        .nav-section {
+            grid-area: nav;
+            background-color: var(--blue);
+            border: 3px solid red;
+        }
+
+        .header-section {
+            grid-area: header;
+            border: 3px solid red;
+
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+            "header-top"
+            "header-bot";
+        }
+
+        .header-top {
+            grid-area: header-top;
+            border: 3px solid blue;
+        }
+
+        .header-bot {
+            grid-area: header-bot;
+            border: 3px solid blue;
+        }
+
+        .body-section {
+            grid-area: body;
+            background-color: var(--gray);
+            border: 3px solid red;
+
+            display: grid;
+            grid-template-columns: 60% 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+            "body-left body-right-top"
+            "body-left body-right-bot"; 
+            /* border: 3px solid blue; */
+        }
+
+        .body-left {
+            grid-area: body-left;
+            border: 3px solid blue;
+        }
+
+        .body-right-top {
+            grid-area: body-right-top;
+            border: 3px solid blue;
+        }
+
+        .body-right-bot {
+            grid-area: body-right-bot;
+            border: 3px solid blue;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <div class="nav-section">
+        <div class="nav-grid-container">
+            <img src="./images/dashboard.svg">
+            <div>Dashboard</div>
+            <img>
+            <div></div>
+            <img src="./images/home.svg">
+            <div>Home</div>
+            <img src="./images/profile.svg">
+            <div>Profile</div>
+            <img src="./images/messages.svg">
+            <div>Messages</div>
+            <img src="./images/history.svg">
+            <div>History</div> 
+            <img src="./images/tasks.svg">
+            <div>Tasks</div>
+            <img src="./images/communities.svg">
+            <div>Communities</div>
+            <img>
+            <div></div>
+            <img src="./images/settings.svg">
+            <div>Settings</div>
+            <img src="./images/support.svg">
+            <div>Support</div>
+            <img src="./images/privacy.svg">
+            <div>Privacy</div>
+        </div>
+    </div>
+
+
+    <div class="header-section">
+        <div class="header-top">
+            <div class="header-top-left">
+                <img src="./images/search.svg">
+                <input type="text">
+            </div>
+
+            <div class="header-top-right">
+                <img src="./images/notifications.svg">
+                <img src="./images/profile-pic-2.png">
+                <div>Barry Teo</div>
+            </div>
+        </div>
+
+        <div class="header-bot">
+            <div class="header-bot-left">
+                <img src="./images/profile-pic-2.png">
+                <div>
+                    <div>Hi there, </div>
+                    <div>Barry Teo (@barryteo)</div>
+                </div>
+            </div>
+
+            <div class="header-bot-right">
+                <button type="button">New</button>
+                <button type="button">Upload</button>
+                <button type="button">Share</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="body-section">
+        <div class="body-left">
+            <p>Your Projects</p>
+            <div class="project-grid-container">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="body-right-top">
+            <p>Announcements</p>
+            <!-- <div class="announcement-grid-container">
+                <div class="announcement">
+                    <h3>Site Maintenance</h3>
+                    <p>Scheduled maintenance will occur tonight from 11 PM to 1 AM.</p>
+                </div>
+
+                <div class="announcement">
+                    <h3>New Feature</h3>
+                    <p>A new dashboard feature is now available. Check it out!</p>
+                </div>
+
+                <div class="announcement">
+                    <h3>Important Update</h3>
+                    <p>Please review your account details and make sure they are up to date.</p>
+                </div>
+            </div>   -->
+        </div>
+
+        <div class="body-right-bot">
+            <p>Trending</p>
+            <!-- <div class="trending-grid-container">
+                <div class="trending">
+                    <img src="./images/lion.jpg">
+                    <div class="trending-names">
+                        <p>@barry</p>
+                        <p>New Odin Apps</p>
+                    </div>
+                </div>
+                <div class="trending">
+                    <img src="./images/fox.jpg">
+                    <div class="trending-names">
+                        <p>@nic</p>
+                        <p>What's Up Next</p>
+                    </div>
+                </div>
+                <div class="trending">
+                    <img src="./images/cat.jpg">
+                    <div class="trending-names">
+                        <p>@darrenn</p>
+                        <p>Trying My Best</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</body>
+
+</html>
