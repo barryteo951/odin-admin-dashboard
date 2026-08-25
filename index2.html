@@ -49,11 +49,25 @@
         .header-top {
             grid-area: header-top;
             border: 3px solid blue;
+
+            display: flex;
+            justify-content: space-between;            
+        }
+
+        .header-top-right {
+            display: flex;
         }
 
         .header-bot {
             grid-area: header-bot;
             border: 3px solid blue;
+        
+            display: flex;
+            justify-content: space-between;   
+        }
+
+        .header-bot-left {
+            display: flex;
         }
 
         .body-section {
@@ -83,6 +97,16 @@
         .body-right-bot {
             grid-area: body-right-bot;
             border: 3px solid blue;
+        }
+
+        .trending {
+            display: flex;
+        }
+
+        .trending > img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
         }
 
     </style>
@@ -166,7 +190,7 @@
 
         <div class="body-right-top">
             <p>Announcements</p>
-            <!-- <div class="announcement-grid-container">
+            <div class="announcement-grid-container">
                 <div class="announcement">
                     <h3>Site Maintenance</h3>
                     <p>Scheduled maintenance will occur tonight from 11 PM to 1 AM.</p>
@@ -181,12 +205,12 @@
                     <h3>Important Update</h3>
                     <p>Please review your account details and make sure they are up to date.</p>
                 </div>
-            </div>   -->
+            </div>  
         </div>
 
         <div class="body-right-bot">
             <p>Trending</p>
-            <!-- <div class="trending-grid-container">
+            <div class="trending-grid-container">
                 <div class="trending">
                     <img src="./images/lion.jpg">
                     <div class="trending-names">
@@ -208,7 +232,7 @@
                         <p>Trying My Best</p>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </body>
