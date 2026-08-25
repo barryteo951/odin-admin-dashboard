@@ -8,22 +8,30 @@
 
     <style> 
 
+        @font-face {
+            font-family: "Roboto";
+            src: url("./fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf") format("ttf");
+        }
+
         :root {
             --blue: #2092d2;
             --gray: #e2e8f0;
             --orange: #efb436;
+            --font: Roboto;
         }
         
         * {
             box-sizing: border-box;
+            font-family: var(--font), sans-serif;
         }
 
         body {
             min-height: 100vh;
+            margin: 0px;
 
             display: grid;
-            grid-template-columns: 20% 1fr;
-            grid-template-rows: auto 1fr;
+            grid-template-columns: 21% 1fr;
+            grid-template-rows: 22% 1fr;
             grid-template-areas: 
             "nav  header"
             "nav  body";
@@ -32,43 +40,133 @@
         .nav-section {
             grid-area: nav;
             background-color: var(--blue);
-            border: 3px solid red;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: 28% auto;
+            grid-template-rows: auto;
+            grid-auto-rows: auto;
+            row-gap: 30px;
+
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .nav-grid > img {
+            justify-self: center;
+            align-self: center;
+        }
+
+        .nav-grid > div:first-of-type {
+            font-size: 30px;
+            align-self: center;
+        }
+
+        .nav-grid > div {
+            align-self: center;
         }
 
         .header-section {
             grid-area: header;
-            border: 3px solid red;
-
+         
             display: grid;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: 40% 1fr;
             grid-template-areas: 
             "header-top"
             "header-bot";
+            padding: 0px 100px 0px 50px;
         }
 
         .header-top {
             grid-area: header-top;
-            border: 3px solid blue;
 
             display: flex;
-            justify-content: space-between;            
+            justify-content: space-between;   
+            align-items: center;       
+        }
+
+        .header-top-left {
+            flex: 1;
+
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-top-left > input { 
+            width: 700px;
+            height: 35px;
+            background-color: var(--gray);
+            border: none;
+            border-radius: 50px;
         }
 
         .header-top-right {
             display: flex;
+            align-items: center;
+            gap: 60px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .header-top-right > img:first-of-type {
+            width: 30px;
+            height: 30px;
+        }
+
+        .header-top-right > img:nth-of-type(2) {
+            width: 55px;
+            height: 55px;
+            border-radius: 50px;
         }
 
         .header-bot {
             grid-area: header-bot;
-            border: 3px solid blue;
         
             display: flex;
             justify-content: space-between;   
+            align-items: center;
         }
 
         .header-bot-left {
             display: flex;
+            align-items: center;
+            gap: 25px;
+            font-weight: bold;
         }
+
+        .header-bot-left > img {
+            width: 85px;
+            height: 85px;
+            border-radius: 50px; 
+        }
+
+        .header-bot-left > div > div:first-child {
+            font-size: 16px;
+        }
+
+        .header-bot-left > div > div:nth-of-type(2) {
+            font-size: 28px;
+        }
+
+        .header-bot-right {
+            display: flex;
+            /* flex-direction: column; */
+            gap: 30px; 
+        }
+
+        .header-bot-right > button {
+            width: 115px;
+            height: 45px;
+            border-radius: 50px;
+            border: none;
+            background-color: var(--blue);
+            font-size: 17px;
+            font-weight: bold;
+            color: white;
+        }    
 
         .body-section {
             grid-area: body;
@@ -115,7 +213,7 @@
 
 <body>
     <div class="nav-section">
-        <div class="nav-grid-container">
+        <div class="nav-grid">
             <img src="./images/dashboard.svg">
             <div>Dashboard</div>
             <img>
@@ -132,6 +230,8 @@
             <div>Tasks</div>
             <img src="./images/communities.svg">
             <div>Communities</div>
+            <img>
+            <div></div>
             <img>
             <div></div>
             <img src="./images/settings.svg">
