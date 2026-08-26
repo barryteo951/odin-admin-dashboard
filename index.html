@@ -153,7 +153,6 @@
 
         .header-bot-right {
             display: flex;
-            /* flex-direction: column; */
             gap: 30px; 
         }
 
@@ -171,40 +170,144 @@
         .body-section {
             grid-area: body;
             background-color: var(--gray);
-            border: 3px solid red;
 
             display: grid;
-            grid-template-columns: 60% 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 70% 1fr;
+            grid-template-rows: auto auto;
             grid-template-areas: 
             "body-left body-right-top"
             "body-left body-right-bot"; 
-            /* border: 3px solid blue; */
         }
 
         .body-left {
             grid-area: body-left;
-            border: 3px solid blue;
+            padding: 0px 0px 0px 25px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 198px 198px 198px;
+            gap: 20px;            
+        }
+
+        .project {
+            display: grid;
+            grid-template-rows: 15% 60% 1fr;
+            background-color: white;
+            border-radius: 15px;
+            padding: 10px 35px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 10px; 
+            background-color: var(--orange);
+            
+            pointer-events: none; 
+            z-index: 1; 
+        }
+
+        .project > h3 {
+            font-size: 20px;
+        }
+
+        .project > p {
+            font-size: 17px;
+            color: gray;
+        }
+
+        .project-icons {
+            display: flex;
+            align-self: center;
+            justify-content: flex-end;
+            gap: 30px;
+        }
+
+        .project-icons > img {
+            width: 30px;
+            height: 30px;
         }
 
         .body-right-top {
             grid-area: body-right-top;
-            border: 3px solid blue;
+            padding: 0px 50px 0px 25px;
+        }
+
+        .body-left > h3:first-of-type, 
+        .body-right-top > h3:first-of-type, 
+        .body-right-bot > h3:first-of-type {
+            font-size: 22px;
+        }
+
+        .announcement-grid {
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px 35px 10px 35px;
+        }
+
+        .announcement > h3, 
+        .announcement > p, 
+        .trending > div > p {
+            margin: 0px;
+        }
+
+        .announcement > h3 {
+            padding-top: 20px;
+            font-size: 16px;
+        }
+
+        .announcement > p {
+            padding-bottom: 20px;
+            font-size: 14px;
+            color: gray;
+        }
+
+        .announcement-grid > div:not(:last-child)::after {
+            content: "";
+            display: block;
+            width: 100%; 
+            height: 1px;
+            background-color: gray;
+            /* margin: 20px auto 0; */
         }
 
         .body-right-bot {
             grid-area: body-right-bot;
-            border: 3px solid blue;
+            padding: 0px 50px 0px 25px;
+        }
+
+        .trending-grid {
+            background-color: white;
+            border-radius: 10px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 25px 35px 25px 35px;
         }
 
         .trending {
             display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         .trending > img {
             width: 50px;
             height: 50px;
             border-radius: 50px;
+        }
+
+        .trending-names > p:nth-of-type(2) {
+            color: gray;
         }
 
     </style>
@@ -277,20 +380,68 @@
 
     <div class="body-section">
         <div class="body-left">
-            <p>Your Projects</p>
-            <div class="project-grid-container">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+            <h3>Your Projects</h3>
+            <div class="project-grid">
+                <div class="project">
+                    <h3>odin-admin-dashboard</h3>
+                    <p>HTML, CSS</p>
+                    <div class="project-icons">
+                        <img src="./images/favourite.svg">
+                        <img src="./images/watch-later.svg">
+                        <img src="./images/share.svg">
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>odin-sign-up-form</h3>
+                    <p>HTML, CSS</p>
+                    <div class="project-icons">
+                        <img src="./images/favourite.svg">
+                        <img src="./images/watch-later.svg">
+                        <img src="./images/share.svg">
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>odin-etch-a-sketch</h3>
+                    <p>HTML, CSS</p>
+                    <div class="project-icons">
+                        <img src="./images/favourite.svg">
+                        <img src="./images/watch-later.svg">
+                        <img src="./images/share.svg">
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>odin-calculator</h3>
+                    <p>HTML, CSS, JavaScript</p>
+                    <div class="project-icons">
+                        <img src="./images/favourite.svg">
+                        <img src="./images/watch-later.svg">
+                        <img src="./images/share.svg">
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>odin-rock-paper-scissors</h3>
+                    <p>HTML, CSS, Javascript</p>
+                    <div class="project-icons">
+                        <img src="./images/favourite.svg">
+                        <img src="./images/watch-later.svg">
+                        <img src="./images/share.svg">
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>odin-landing-page</h3>
+                    <p>HTML, CSS</p>
+                    <div class="project-icons">
+                        <img src="./images/favourite.svg">
+                        <img src="./images/watch-later.svg">
+                        <img src="./images/share.svg">
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="body-right-top">
-            <p>Announcements</p>
-            <div class="announcement-grid-container">
+            <h3>Announcements</h3>
+            <div class="announcement-grid">
                 <div class="announcement">
                     <h3>Site Maintenance</h3>
                     <p>Scheduled maintenance will occur tonight from 11 PM to 1 AM.</p>
@@ -309,8 +460,8 @@
         </div>
 
         <div class="body-right-bot">
-            <p>Trending</p>
-            <div class="trending-grid-container">
+            <h3>Trending</h3>
+            <div class="trending-grid">
                 <div class="trending">
                     <img src="./images/lion.jpg">
                     <div class="trending-names">
