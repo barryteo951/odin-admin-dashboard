@@ -17,6 +17,12 @@
             --blue: #2092d2;
             --gray: #e2e8f0;
             --orange: #efb436;
+
+            --space-sm: 10px;
+            --space-md: 20px;
+            --space-lg: 30px;
+            --space-xl: 60px;
+
             --font: Roboto;
         }
         
@@ -30,54 +36,69 @@
             margin: 0px;
 
             display: grid;
-            grid-template-columns: 21% 1fr;
-            grid-template-rows: 22% 1fr;
+            grid-template-columns: 360px 1fr;
+            grid-template-rows: 180px 1fr;
             grid-template-areas: 
-            "nav  header"
-            "nav  body";
+            "dashboard-nav  dashboard-header"
+            "dashboard-nav  dashboard-content";
         }
 
-        .nav-section {
-            grid-area: nav;
+        .dashboard-nav {
+            grid-area: dashboard-nav;
             background-color: var(--blue);
         }
 
         .nav-grid {
-            display: grid;
-            grid-template-columns: 28% auto;
-            grid-template-rows: auto;
-            grid-auto-rows: auto;
-            row-gap: 30px;
-
             font-size: 25px;
             font-weight: bold;
             color: white;
-            margin-top: 20px;
+            /* margin-top: 20px; */
+
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
         }
 
-        .nav-grid > img {
-            justify-self: center;
-            align-self: center;
+        .nav-grid    a {
+            color: white;
+            text-decoration: none;
+            
+            display: flex;
+            gap: var(--space-lg);
+            align-self: flex-start;
         }
 
-        .nav-grid > div:first-of-type {
+        .nav-grid > a:first-of-type {
+            gap: var(--space-md);
+        }
+
+        .nav-home {   
+            padding: 15px 0px 0px 27px;
             font-size: 30px;
+        }
+ 
+        .nav-home > span { 
             align-self: center;
         }
 
-        .nav-grid > div {
-            align-self: center;
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+            padding-left: 40px;
         }
 
-        .header-section {
-            grid-area: header;
+        .dashboard-header {
+            grid-area: dashboard-header;
          
             display: grid;
-            grid-template-rows: 40% 1fr;
+            grid-template-rows: 75px 1fr;
             grid-template-areas: 
             "header-top"
             "header-bot";
             padding: 0px 100px 0px 50px;
+            /* box-shadow: 5px 10px black;        */
+            /* border: 5px solid red; */
         }
 
         .header-top {
@@ -85,38 +106,38 @@
 
             display: flex;
             justify-content: space-between;   
-            align-items: center;       
+            align-items: center;
         }
 
-        .header-top-left {
+        .search-bar {
             flex: 1;
 
             display: flex;
-            gap: 20px;
+            gap: var(--space-md);
         }
 
-        .header-top-left > input { 
-            width: 700px;
+        .search-bar > input { 
+            width: 80%;
             height: 35px;
             background-color: var(--gray);
             border: none;
             border-radius: 50px;
         }
 
-        .header-top-right {
+        .user-menu {
             display: flex;
             align-items: center;
-            gap: 60px;
+            gap: var(--space-xl);
             font-size: 22px;
             font-weight: bold;
         }
 
-        .header-top-right > img:first-of-type {
+        .notification-icon {
             width: 30px;
             height: 30px;
         }
 
-        .header-top-right > img:nth-of-type(2) {
+        .profile-image {
             width: 55px;
             height: 55px;
             border-radius: 50px;
@@ -130,33 +151,33 @@
             align-items: center;
         }
 
-        .header-bot-left {
+        .user-greeting {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: var(--space-md);
             font-weight: bold;
         }
 
-        .header-bot-left > img {
+        .user-greeting > img {
             width: 85px;
             height: 85px;
             border-radius: 50px; 
         }
 
-        .header-bot-left > div > div:first-child {
+        .greeting {
             font-size: 16px;
         }
 
-        .header-bot-left > div > div:nth-of-type(2) {
+        .user-info {
             font-size: 28px;
         }
 
-        .header-bot-right {
+        .project-actions {
             display: flex;
-            gap: 30px; 
+            gap: var(--space-lg); 
         }
 
-        .header-bot-right > button {
+        .project-actions > button {
             width: 115px;
             height: 45px;
             border-radius: 50px;
@@ -167,33 +188,33 @@
             color: white;
         }    
 
-        .body-section {
-            grid-area: body;
+        .dashboard-content {
+            grid-area: dashboard-content;
             background-color: var(--gray);
 
             display: grid;
-            grid-template-columns: 70% 1fr;
+            grid-template-columns: 2fr 1fr;
             grid-template-rows: auto auto;
             grid-template-areas: 
-            "body-left body-right-top"
-            "body-left body-right-bot"; 
+            "projects-section  announcements-section"
+            "projects-section  trending-section"; 
         }
 
-        .body-left {
-            grid-area: body-left;
+        .projects-section {
+            grid-area: projects-section;
             padding: 0px 0px 0px 25px;
         }
 
         .project-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 198px 198px 198px;
-            gap: 20px;            
+            grid-template-columns: repeat(2, 1fr); 
+            grid-template-rows: repeat(3, 200px);
+            gap: var(--space-md);            
         }
 
         .project {
             display: grid;
-            grid-template-rows: 15% 60% 1fr;
+            grid-template-rows: auto 1fr auto;
             background-color: white;
             border-radius: 15px;
             padding: 10px 35px;
@@ -228,29 +249,30 @@
             display: flex;
             align-self: center;
             justify-content: flex-end;
-            gap: 30px;
+            gap: var(--space-lg);
         }
 
-        .project-icons > img {
+        .project-icons > button {
             width: 30px;
             height: 30px;
+            /* all: unset; */
+            background: transparent; 
+            border: none;
         }
 
-        .body-right-top {
-            grid-area: body-right-top;
+        .announcements-section {
+            grid-area: announcements-section;
             padding: 0px 50px 0px 25px;
         }
 
-        .body-left > h3:first-of-type, 
-        .body-right-top > h3:first-of-type, 
-        .body-right-bot > h3:first-of-type {
+        .section-title { 
             font-size: 22px;
         }
 
         .announcement-grid {
             background-color: white;
             border-radius: 10px;
-            padding: 10px 35px 10px 35px;
+            padding: 10px 35px;
         }
 
         .announcement > h3, 
@@ -279,8 +301,8 @@
             /* margin: 20px auto 0; */
         }
 
-        .body-right-bot {
-            grid-area: body-right-bot;
+        .trending-section {
+            grid-area: trending-section;
             padding: 0px 50px 0px 25px;
         }
 
@@ -290,14 +312,14 @@
 
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            padding: 25px 35px 25px 35px;
+            gap: var(--space-md);
+            padding: 25px 35px;
         }
 
         .trending {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: var(--space-md);
         }
 
         .trending > img {
@@ -306,7 +328,7 @@
             border-radius: 50px;
         }
 
-        .trending-names > p:nth-of-type(2) {
+        .trending-description {
             color: gray;
         }
 
@@ -315,132 +337,188 @@
 
 
 <body>
-    <div class="nav-section">
+    <nav class="dashboard-nav">
         <div class="nav-grid">
-            <img src="./images/dashboard.svg">
-            <div>Dashboard</div>
-            <img>
-            <div></div>
-            <img src="./images/home.svg">
-            <div>Home</div>
-            <img src="./images/profile.svg">
-            <div>Profile</div>
-            <img src="./images/messages.svg">
-            <div>Messages</div>
-            <img src="./images/history.svg">
-            <div>History</div> 
-            <img src="./images/tasks.svg">
-            <div>Tasks</div>
-            <img src="./images/communities.svg">
-            <div>Communities</div>
-            <img>
-            <div></div>
-            <img>
-            <div></div>
-            <img src="./images/settings.svg">
-            <div>Settings</div>
-            <img src="./images/support.svg">
-            <div>Support</div>
-            <img src="./images/privacy.svg">
-            <div>Privacy</div>
+            <a class="nav-home" href="#dashboard">
+                <img src="./images/dashboard.svg" alt="">
+                <span>Dashboard</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#home">
+                    <img src="./images/home.svg" alt="">
+                    <span>Home</span>
+                </a>
+                <a href="#profile">
+                    <img src="./images/profile.svg" alt="">
+                    <span>Profile</span>
+                </a>
+                <a href="#messages">
+                    <img src="./images/messages.svg" alt="">
+                    <span>Messages</span>
+                </a>
+                <a href="#history"> 
+                    <img src="./images/history.svg" alt="">
+                    <span>History</span>
+                </a>
+                <a href="#tasks">
+                    <img src="./images/tasks.svg" alt="">
+                    <span>Tasks</span>
+                </a>
+                <a href="#communities">
+                    <img src="./images/communities.svg" alt="">
+                    <span>Communities</span>
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#images">
+                    <img src="./images/settings.svg" alt="">
+                    <span>Settings</span>
+                </a>
+                <a href="#support">
+                    <img src="./images/support.svg" alt="">
+                    <span>Support</span>
+                </a>        
+                <a href="#privacy">        
+                    <img src="./images/privacy.svg" alt="">
+                    <span>Privacy</span>
+                </a>
+            </div>
         </div>
-    </div>
+    </nav>
 
 
-    <div class="header-section">
+    <header class="dashboard-header">
         <div class="header-top">
-            <div class="header-top-left">
-                <img src="./images/search.svg">
+            <div class="search-bar">
+                <img src="./images/search.svg" alt="">
                 <input type="text">
             </div>
 
-            <div class="header-top-right">
-                <img src="./images/notifications.svg">
-                <img src="./images/profile-pic-2.png">
+            <div class="user-menu">
+                <img class="notification-icon" src="./images/notifications.svg" alt="Notifications">
+                <img class="profile-image" src="./images/profile-pic-2.png" alt="Profile picture">
                 <div>Barry Teo</div>
             </div>
         </div>
 
         <div class="header-bot">
-            <div class="header-bot-left">
-                <img src="./images/profile-pic-2.png">
+            <div class="user-greeting">
+                <img src="./images/profile-pic-2.png" alt="Barry's profile picture">
                 <div>
-                    <div>Hi there, </div>
-                    <div>Barry Teo (@barryteo)</div>
+                    <div class="greeting">Hi there, </div>
+                    <div class="user-info">Barry Teo (@barryteo)</div>
                 </div>
             </div>
 
-            <div class="header-bot-right">
+            <div class="project-actions">
                 <button type="button">New</button>
                 <button type="button">Upload</button>
                 <button type="button">Share</button>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="body-section">
-        <div class="body-left">
-            <h3>Your Projects</h3>
+    <main class="dashboard-content">
+        <section class="projects-section">
+            <h2 class="section-title">Your Projects</h2>
             <div class="project-grid">
-                <div class="project">
+                <article class="project">
                     <h3>odin-admin-dashboard</h3>
                     <p>HTML, CSS</p>
                     <div class="project-icons">
-                        <img src="./images/favourite.svg">
-                        <img src="./images/watch-later.svg">
-                        <img src="./images/share.svg">
+                        <button type="button" aria-label="Favourite">
+                            <img src="./images/favourite.svg" alt="">
+                        </button>
+                        <button type="button" aria-label="Watch later">
+                            <img src="./images/watch-later.svg" alt="">
+                        </button>
+                        <button type="button" aria-label="Share">
+                            <img src="./images/share.svg" alt="">
+                        </button>
                     </div>
-                </div>
-                <div class="project">
+                </article>
+                <article class="project">
                     <h3>odin-sign-up-form</h3>
                     <p>HTML, CSS</p>
                     <div class="project-icons">
-                        <img src="./images/favourite.svg">
-                        <img src="./images/watch-later.svg">
-                        <img src="./images/share.svg">
+                        <button type="button" aria-label="Favourite">
+                            <img src="./images/favourite.svg" alt="">
+                        </button>
+                        <button type="button" aria-label="Watch later">
+                            <img src="./images/watch-later.svg" alt="">
+                        </button>
+                        <button type="button" aria-label="Share">
+                            <img src="./images/share.svg" alt="">
+                        </button>
                     </div>
-                </div>
-                <div class="project">
+                </article>
+                <article class="project">
                     <h3>odin-etch-a-sketch</h3>
                     <p>HTML, CSS</p>
                     <div class="project-icons">
-                        <img src="./images/favourite.svg">
-                        <img src="./images/watch-later.svg">
-                        <img src="./images/share.svg">
+                        <button type="button" aria-label="Favourite">
+                            <img src="./images/favourite.svg" alt="">
+                        </button>
+                        <button type="button" aria-label="Watch later">
+                            <img src="./images/watch-later.svg" alt="">
+                        </button>
+                        <button type="button" aria-label="Share">
+                            <img src="./images/share.svg" alt="">
+                        </button>
                     </div>
-                </div>
-                <div class="project">
+                </article>
+                <article class="project">
                     <h3>odin-calculator</h3>
                     <p>HTML, CSS, JavaScript</p>
                     <div class="project-icons">
-                        <img src="./images/favourite.svg">
-                        <img src="./images/watch-later.svg">
-                        <img src="./images/share.svg">
+                        <button type="button" aria-label="Favourite">
+                            <img src="./images/favourite.svg" alt="">
+                        </button>
+                        <button type="button" aria-label="Watch later">
+                            <img src="./images/watch-later.svg" alt="">
+                        </button>
+                        <button type="button" aria-label="Share">
+                            <img src="./images/share.svg" alt="">
+                        </button>
                     </div>
-                </div>
-                <div class="project">
+                </article>
+                <article class="project">
                     <h3>odin-rock-paper-scissors</h3>
                     <p>HTML, CSS, Javascript</p>
                     <div class="project-icons">
-                        <img src="./images/favourite.svg">
-                        <img src="./images/watch-later.svg">
-                        <img src="./images/share.svg">
+                        <button type="button" aria-label="Favourite">
+                            <img src="./images/favourite.svg" alt="">
+                        </button>
+                        <button type="button" aria-label="Watch later">
+                            <img src="./images/watch-later.svg" alt="">
+                        </button>
+                        <button type="button" aria-label="Share">
+                            <img src="./images/share.svg" alt="">
+                        </button>
                     </div>
-                </div>
-                <div class="project">
+                </article>
+                <article class="project">
                     <h3>odin-landing-page</h3>
                     <p>HTML, CSS</p>
                     <div class="project-icons">
-                        <img src="./images/favourite.svg">
-                        <img src="./images/watch-later.svg">
-                        <img src="./images/share.svg">
+                        <button type="button" aria-label="Favourite">
+                            <img src="./images/favourite.svg" alt="">
+                        </button>
+                        <button type="button" aria-label="Watch later">
+                            <img src="./images/watch-later.svg" alt="">
+                        </button>
+                        <button type="button" aria-label="Share">
+                            <img src="./images/share.svg" alt="">
+                        </button>
                     </div>
-                </div>
+                </article>
             </div>
-        </div>
+        </section>
 
-        <div class="body-right-top">
-            <h3>Announcements</h3>
+        <section class="announcements-section">
+            <h2 class="section-title">Announcements</h2>
             <div class="announcement-grid">
                 <div class="announcement">
                     <h3>Site Maintenance</h3>
@@ -457,35 +535,35 @@
                     <p>Please review your account details and make sure they are up to date.</p>
                 </div>
             </div>  
-        </div>
+        </section>
 
-        <div class="body-right-bot">
-            <h3>Trending</h3>
+        <section class="trending-section">
+            <h2 class="section-title">Trending</h2>
             <div class="trending-grid">
                 <div class="trending">
-                    <img src="./images/lion.jpg">
+                    <img src="./images/profile-pic-2.png" alt="Barry's profile picture">
                     <div class="trending-names">
-                        <p>@barry</p>
-                        <p>New Odin Apps</p>
+                        <p>@barryteo</p>
+                        <p class="trending-description">New Odin Apps</p>
                     </div>
                 </div>
                 <div class="trending">
-                    <img src="./images/fox.jpg">
+                    <img src="./images/fox.jpg" alt="Nic's profile picture">
                     <div class="trending-names">
                         <p>@nic</p>
-                        <p>What's Up Next</p>
+                        <p class="trending-description">What's Up Next</p>
                     </div>
                 </div>
                 <div class="trending">
-                    <img src="./images/cat.jpg">
+                    <img src="./images/cat.jpg" alt="Darrenn's profile picture">
                     <div class="trending-names">
                         <p>@darrenn</p>
-                        <p>Trying My Best</p>
+                        <p class="trending-description">Trying My Best</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 
 </html>
